@@ -1,7 +1,7 @@
 Add-Type -AssemblyName System.Drawing
 
 $root   = Resolve-Path "$PSScriptRoot\..\app\src\main\res"
-$source = Resolve-Path "$PSScriptRoot\..\555.png"
+$source = Resolve-Path "$PSScriptRoot\..\666.png"
 
 $fgSizes = @{
     'mipmap-mdpi'    = 108
