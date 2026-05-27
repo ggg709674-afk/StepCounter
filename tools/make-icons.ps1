@@ -20,6 +20,7 @@ $legacySizes = @{
 
 $primary     = [System.Drawing.Color]::FromArgb(99,102,241)
 $primaryDark = [System.Drawing.Color]::FromArgb(79,70,229)
+$white       = [System.Drawing.Color]::White
 
 function Draw-Icon {
     param([int]$size, [bool]$withBg, [bool]$round)
@@ -31,20 +32,20 @@ function Draw-Icon {
     $g.TextRenderingHint  = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
 
     if ($withBg) {
-        $rect  = [System.Drawing.Rectangle]::new(0, 0, $size, $size)
-        $brush = [System.Drawing.Drawing2D.LinearGradientBrush]::new($rect, $primary, $primaryDark, 45.0)
+        $bgBrush = [System.Drawing.SolidBrush]::new($white)
         if ($round) {
             $path = [System.Drawing.Drawing2D.GraphicsPath]::new()
             $path.AddEllipse(0, 0, $size, $size)
-            $g.FillPath($brush, $path)
+            $g.FillPath($bgBrush, $path)
             $path.Dispose()
         } else {
-            $g.FillRectangle($brush, $rect)
+            $g.FillRectangle($bgBrush, [System.Drawing.Rectangle]::new(0, 0, $size, $size))
         }
-        $brush.Dispose()
+        $bgBrush.Dispose()
     }
 
-    $fontSize = [single]([math]::Round($size * 0.21))
+    # WOOZOO 한 줄, 안전영역(가운데 ~62%) 안에 들어가게 폰트 크기 결정
+    $fontSize = [single]([math]::Round($size * 0.135))
     $font = $null
     foreach ($name in @('Arial Black','Segoe UI Black','Impact','Arial')) {
         try {
@@ -53,21 +54,15 @@ function Draw-Icon {
         } catch {}
     }
 
-    $brushW = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::White)
+    $textBrush = [System.Drawing.SolidBrush]::new($primary)
     $sf = [System.Drawing.StringFormat]::new()
     $sf.Alignment     = [System.Drawing.StringAlignment]::Center
     $sf.LineAlignment = [System.Drawing.StringAlignment]::Center
 
-    $lineH = $fontSize * 1.0
-    $cy = $size / 2.0
+    $rect = [System.Drawing.RectangleF]::new(0.0, 0.0, [single]$size, [single]$size)
+    $g.DrawString("WOOZOO", $font, $textBrush, $rect, $sf)
 
-    $top = [System.Drawing.RectangleF]::new(0.0, [single]($cy - $lineH), [single]$size, [single]$lineH)
-    $bot = [System.Drawing.RectangleF]::new(0.0, [single]$cy,            [single]$size, [single]$lineH)
-
-    $g.DrawString("WOO", $font, $brushW, $top, $sf)
-    $g.DrawString("ZOO", $font, $brushW, $bot, $sf)
-
-    $brushW.Dispose()
+    $textBrush.Dispose()
     $font.Dispose()
     $g.Dispose()
     return $bmp
