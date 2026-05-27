@@ -66,8 +66,7 @@
             android:orientation="vertical"
             android:background="@drawable/bg_card_primary"
             android:padding="24dp"
-            android:layout_marginBottom="14dp"
-            android:elevation="2dp">
+            android:layout_marginBottom="14dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,7 +155,7 @@
                 android:padding="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="7dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -185,7 +184,7 @@
                 android:gravity="center"
                 android:layout_marginStart="3.5dp"
                 android:layout_marginEnd="3.5dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -213,7 +212,7 @@
                 android:padding="14dp"
                 android:gravity="center"
                 android:layout_marginStart="7dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -248,7 +247,7 @@
                 android:background="@drawable/bg_card"
                 android:padding="16dp"
                 android:layout_marginEnd="5dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -283,7 +282,7 @@
                 android:background="@drawable/bg_card"
                 android:padding="16dp"
                 android:layout_marginStart="5dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -325,7 +324,7 @@
                 android:background="@drawable/bg_card"
                 android:padding="16dp"
                 android:layout_marginEnd="5dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -361,7 +360,7 @@
                 android:background="@drawable/bg_card"
                 android:padding="16dp"
                 android:layout_marginStart="5dp"
-                android:elevation="1dp">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -397,7 +396,7 @@
             android:background="@drawable/bg_card"
             android:padding="18dp"
             android:layout_marginBottom="14dp"
-            android:elevation="1dp">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
