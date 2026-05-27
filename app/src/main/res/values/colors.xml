@@ -2,9 +2,20 @@
 <resources>
     <color name="primary">#6366F1</color>
     <color name="primary_dark">#4F46E5</color>
-    <color name="bg">#FFFFFF</color>
+    <color name="primary_soft">#EEF2FF</color>
+
+    <color name="bg">#F8FAFC</color>
+    <color name="card">#FFFFFF</color>
+    <color name="card_shadow">#10000000</color>
+
     <color name="text">#0F172A</color>
     <color name="text_sub">#475569</color>
     <color name="text_hint">#94A3B8</color>
     <color name="border">#E2E8F0</color>
+    <color name="divider">#F1F5F9</color>
+
+    <color name="accent_green">#10B981</color>
+    <color name="accent_orange">#F59E0B</color>
+    <color name="accent_pink">#EC4899</color>
+    <color name="accent_blue">#3B82F6</color>
 </resources>
